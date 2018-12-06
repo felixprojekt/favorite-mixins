@@ -33,14 +33,14 @@
     -webkit-transform-origin: $origin;
     transform-origin: $origin;
 }
-
+//linear gradient
 @mixin linear-gradient($args...) {
     background-image: -o-linear-gradient($args); 
     background-image: -moz-linear-gradient($args); 
     background-image: -webkit-linear-gradient($args);
     background-image: linear-gradient($args); 
 }
-
+//blur
 @mixin blur($amount) {
     -webkit-filter: blur($amount);
     -moz-filter: blur($amount);
@@ -48,3 +48,9 @@
     -ms-filter: blur($amount);
     filter: blur($amount);
 } 
+//box-shadow
+@mixin box-shadow($args...) {
+    -webkit-box-shadow: unquote($args);
+    -moz-box-shadow: unquote($args);
+    box-shadow: unquote($args);
+}
