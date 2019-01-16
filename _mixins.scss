@@ -54,3 +54,43 @@
     -moz-box-shadow: $args;
     box-shadow: $args;
 }
+
+/*
+Animation mixin, use it with keyframes mixin, like: 
+@include animation(neonGlow, 5s);
+ */
+@mixin animation($name, $duration) {
+    -webkit-animation: $name $duration infinite; /* Safari 4+ */
+    -moz-animation:    $name $duration infinite; /* Fx 5+ */
+    -o-animation:      $name $duration infinite; /* Opera 12+ */
+    animation:         $name $duration infinite; /* IE 10+, Fx 29+ */
+}
+
+/*
+keyframes mixin, use it like: 
+@include keyframes(neonGlow) {
+    0% {
+        background-color: #ffccf2;
+    }
+    50% {
+        background-color: #ccffcc;
+    }
+    100% {
+        background-color: #ccffff;
+    } 
+}
+*/
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
