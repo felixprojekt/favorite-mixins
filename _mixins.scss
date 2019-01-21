@@ -12,11 +12,11 @@
 @mixin rotate ($deg) {
     @include transform(rotate(#{$deg}deg));
 }
- 
+
 // scale
 @mixin scale($scale) {
     @include transform(scale($scale));
-} 
+}
 // translate
 @mixin translate ($x, $y) {
     @include transform(translate($x, $y));
@@ -33,12 +33,16 @@
     -webkit-transform-origin: $origin;
     transform-origin: $origin;
 }
-//linear gradient
+
+/*
+Linear gradient, use it like:
+@include linear-gradient(45deg, rgb(68,133,225) 0%, rgb(58,165,238) 100% );
+ */
 @mixin linear-gradient($args...) {
-    background-image: -o-linear-gradient($args); 
-    background-image: -moz-linear-gradient($args); 
+    background-image: -o-linear-gradient($args);
+    background-image: -moz-linear-gradient($args);
     background-image: -webkit-linear-gradient($args);
-    background-image: linear-gradient($args); 
+    background-image: linear-gradient($args);
 }
 //blur
 @mixin blur($amount) {
@@ -47,7 +51,7 @@
     -o-filter: blur($amount);
     -ms-filter: blur($amount);
     filter: blur($amount);
-} 
+}
 //box-shadow
 @mixin box-shadow($args...) {
     -webkit-box-shadow: $args;
@@ -56,7 +60,7 @@
 }
 
 /*
-Animation mixin, use it with keyframes mixin, like: 
+Animation mixin, use it with keyframes mixin, like:
 @include animation(neonGlow, 5s);
  */
 @mixin animation($name, $duration) {
@@ -67,7 +71,7 @@ Animation mixin, use it with keyframes mixin, like:
 }
 
 /*
-keyframes mixin, use it like: 
+keyframes mixin, use it like:
 @include keyframes(neonGlow) {
     0% {
         background-color: #ffccf2;
@@ -77,20 +81,20 @@ keyframes mixin, use it like:
     }
     100% {
         background-color: #ccffff;
-    } 
+    }
 }
 */
 @mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
 }
