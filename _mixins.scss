@@ -17,6 +17,12 @@
 @mixin scale($scale) {
     @include transform(scale($scale));
 }
+
+//flip element horizontally
+@mixin scaleX($scale) {
+    @include transform(scaleX($scale));
+}
+
 // translate
 @mixin translate ($x, $y) {
     @include transform(translate($x, $y));
@@ -59,6 +65,20 @@ or
     -webkit-box-shadow: $args;
     -moz-box-shadow: $args;
     box-shadow: $args;
+}
+
+//mask image with svg as a mask
+@mixin mask-image($maskUrl, $maskSize) {
+    mask-image: url($maskUrl);
+    -webkit-mask-image: url($maskUrl);
+    mask-mode: alpha;
+    -webkit-mask-mode: alpha;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: $maskSize;
+    -webkit-mask-size: $maskSize;
+    mask-position: center;
+    -webkit-mask-position: center;
 }
 
 /*
