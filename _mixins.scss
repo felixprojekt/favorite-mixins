@@ -74,7 +74,11 @@ or
     -ms-filter: blur($amount);
     filter: blur($amount);
 }
-//box-shadow
+
+/*
+Box shadow, use it like:
+@include box-shadow(0px 10px 20px 0px rgba(0, 0, 0, 0.2));
+ */
 @mixin box-shadow($args...) {
     -webkit-box-shadow: $args;
     -moz-box-shadow: $args;
