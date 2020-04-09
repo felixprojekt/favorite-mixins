@@ -23,6 +23,10 @@
     @include transform(scaleX($scale));
 }
 
+@mixin scaleY($scale) {
+    @include transform(scaleY($scale));
+}
+
 // translate
 @mixin translate ($x, $y) {
     @include transform(translate($x, $y));
